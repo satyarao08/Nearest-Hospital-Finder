@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediMap</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+2212
+<body>
+    <header>
+        <div class="header-content">
+            <div class="header-left">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <img src="logo.png" alt="MediMap Logo" class="logo">
+                    <div>
+                        <h1>MedMap</h1>
+                        <p>Find the nearest healthcare centers based on your location.</p>
+                    </div>
+                </div>
+            </div>
+            <nav class="header-nav">
+                <a href="#home" class="nav-link active" data-page="home">Home</a>
+                <a href="#hospital" class="nav-link" data-page="hospital">Hospital</a>
+                <a href="#medical" class="nav-link" data-page="medical">Medical</a>
+                <a href="#vet" class="nav-link" data-page="vet">Vet Clinic</a>
+                <a href="#about" class="nav-link" data-page="about">About</a>
+                <a href="#contact" class="nav-link" data-page="contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-content" id="home-page">
+        <div class="container">
+            <div class="sidebar">
+                <h2>No worries, We've got you!</h2>
+                <p class="welcome-text">Welcome to MedMap! We help you locate the nearest healthcare facilities in your
+                    area.</p>
+
+                <div class="location-search" style="margin-bottom: 15px; display: flex; gap: 10px;">
+                    <input type="text" id="manual-location" placeholder="Enter location (e.g. New York)"
+                        style="flex: 1; padding: 8px; border-radius: 8px; border: 1px solid #ccc;">
+                    <button id="search-btn"
+                        style="padding: 8px 15px; background: #8e44ad; color: white; border: none; border-radius: 8px; cursor: pointer;">Set</button>
+                </div>
+
+                <p id="status">Please enter your location above.</p>
+                <ul id="hospital-list"></ul>
+            </div>
+            <div id="map"></div>
+        </div>
+    </div>
+
+    <div class="page-content" id="hospital-page" style="display: none;">
+        <div class="container">
+            <div class="sidebar">
+                <h2>Find Hospitals</h2>
+                <p id="hospital-status">Locating nearby health centers...</p>
+                <ul id="hospital-list-page"></ul>
+            </div>
+            <div id="hospital-map"></div>
+        </div>
+    </div>
+
+    <div class="page-content" id="medical-page" style="display: none;">
+        <div class="container">
+            <div class="sidebar">
+                <h2>Medical Centers:</h2>
+                <p id="medical-status">Locating medical centers...</p>
+                <ul id="medical-list"></ul>
+            </div>
+            <div id="medical-map"></div>
+        </div>
+    </div>
+
+    <div class="page-content" id="vet-page" style="display: none;">
+        <div class="container">
+            <div class="sidebar">
+                <h2>Veterinary Clinics 🐾</h2>
+                <p id="vet-status">Locating vet clinics...</p>
+                <ul id="vet-list"></ul>
+            </div>
+            <div id="vet-map"></div>
+        </div>
+    </div>
+
+    <div class="page-content" id="about-page" style="display: none;">
+        <div class="info-container">
+            <div class="info-card">
+                <h2>About MedMap!?</h2>
+                <p>MedMap is a comprehensive healthcare location service.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-content" id="contact-page" style="display: none;">
+        <div class="info-container">
+            <div class="info-card">
+                <h2>Contact Us</h2>
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required
+                            placeholder="Your message..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 MediMap | Powered by Google Maps</p>
+        </div>
+    </footer>
+
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDcx4j0v3_Z_eoPhSXpfCaqUSAJK90aLc&libraries=places,geometry&callback=initMap"
+        async defer></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
